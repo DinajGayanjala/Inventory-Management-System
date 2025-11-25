@@ -161,11 +161,11 @@ INSERT INTO appuser1 (userRole, name, mobileNumber, email, password, address, st
 VALUES ('Admin', 'System Administrator', '1234567890', 'admin@inventory.com', 'admin123', 'System Address', 'Active');
 👥 Team Members
 Member	Role	Responsibilities
-Member 1	Database & Core Infrastructure	Database connection, utilities, table creation, main class
-Member 2	Authentication & Security	Login system, user management, PDF utilities
-Member 3	Product Management	Category management, product catalog, inventory tracking
-Member 4	Order Processing	Order management, customer management, invoice generation
-Member 5	UI & Reporting	Main dashboard, navigation, order viewing, reports
+Member 1	(dinaj)          Database & Core Infrastructure	Database connection, utilities, table creation, main class
+Member 2 (neranja)	Authentication & Security	Login system, user management, PDF utilities
+Member 3 (kaveesha)	Product Management	Category management, product catalog, inventory tracking
+Member 4 (dasun)	         Order Processing	Order management, customer management, invoice generation
+Member 5 (isahanka)	UI & Reporting	Main dashboard, navigation, order viewing, reports
 📁 Module Details
 Core Modules:
 dbconnect.java - Database connection management
@@ -254,8 +254,7 @@ Push to the branch (git push origin feature/AmazingFeature)
 
 Open a Pull Request
 
-📞 Contact
-Development Team - inventory-team@example.com
+
 
 Project Link: https://github.com/your-username/inventory-management-system
 
