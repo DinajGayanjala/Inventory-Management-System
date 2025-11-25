@@ -12,7 +12,7 @@ public class table {
         Statement st = null;
 
         try {
-            // Connect DB
+          
             con = dbconnect.connect();
 
             if (con == null) {
@@ -22,9 +22,7 @@ public class table {
 
             st = con.createStatement();
 
-            // ------------------------------------------------
-            // 1. CATEGORY TABLE
-            // ------------------------------------------------
+
             st.executeUpdate(
                 "CREATE TABLE IF NOT EXISTS category (" +
                 "category_pk INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -32,9 +30,7 @@ public class table {
                 ")"
             );
 
-            // ------------------------------------------------
-            // 2. CUSTOMER TABLE
-            // ------------------------------------------------
+
             st.executeUpdate(
                 "CREATE TABLE IF NOT EXISTS customer (" +
                 "customer_pk INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -44,9 +40,7 @@ public class table {
                 ")"
             );
 
-            // ------------------------------------------------
-            // 3. ORDER DETAIL TABLE (Used in vieworder.java)
-            // ------------------------------------------------
+
             st.executeUpdate(
                 "CREATE TABLE IF NOT EXISTS orderdetail (" +
                 "orderid INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -57,9 +51,7 @@ public class table {
                 ")"
             );
 
-            // ------------------------------------------------
-            // 4. PRODUCT TABLE
-            // ------------------------------------------------
+
             st.executeUpdate(
                 "CREATE TABLE IF NOT EXISTS product (" +
                 "product_pk INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -72,9 +64,7 @@ public class table {
                 ")"
             );
 
-            // ------------------------------------------------
-            // 5. APPUSER TABLE
-            // ------------------------------------------------
+
             String createTableSQL =
                 "CREATE TABLE IF NOT EXISTS appuser1 (" +
                 "appuser_pk INT AUTO_INCREMENT PRIMARY KEY, " +
@@ -91,9 +81,7 @@ public class table {
             st.executeUpdate(createTableSQL);
             System.out.println("✅ Table 'appuser1' created successfully!");
 
-            // ------------------------------------------------
-            // 6. INSERT SUPER ADMIN (only if not exists)
-            // ------------------------------------------------
+
             String insertSQL =
                 "INSERT INTO appuser1 (userRole, name, mobileNumber, email, password, address, status) " +
                 "VALUES ('Admin', 'Super Admin', '1234567890', 'admin@shop.com', 'admin123', 'System Data', 'Active')";
