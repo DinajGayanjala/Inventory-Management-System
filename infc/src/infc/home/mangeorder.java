@@ -267,9 +267,9 @@ public class mangeorder extends javax.swing.JFrame {
         getContentPane().add(tplb, new org.netbeans.lib.awtextra.AbsoluteConstraints(1130, 540, 60, 20));
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }// </editor-fold>
 
-    private void formComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_formComponentShown
+    private void formComponentShown(java.awt.event.ComponentEvent evt) {
         cnbox.setEditable(false);
         cmnbox.setEditable(false);
         ebox.setEditable(false);
@@ -311,21 +311,19 @@ public class mangeorder extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, e);
         }
 
-    }//GEN-LAST:event_formComponentShown
+    }
 
-    private void cnboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cnboxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cnboxActionPerformed
+    private void cnboxActionPerformed(java.awt.event.ActionEvent evt) {
+        
+    }
 
-    private void ppboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ppboxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ppboxActionPerformed
+    private void ppboxActionPerformed(java.awt.event.ActionEvent evt) {
+    }
 
-    private void pdboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pdboxActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_pdboxActionPerformed
+    private void pdboxActionPerformed(java.awt.event.ActionEvent evt) {
+    }
 
-    private void cartboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cartboxActionPerformed
+    private void cartboxActionPerformed(java.awt.event.ActionEvent evt) {
         String noOfUnits = oqbox.getText();
         if (!noOfUnits.equals("")) {
             String productname = pnbox.getText();
@@ -374,9 +372,9 @@ public class mangeorder extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(null, "no of quantity and product field is required");
         }
-    }//GEN-LAST:event_cartboxActionPerformed
+    }
 
-    private void saveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saveActionPerformed
+    private void saveActionPerformed(java.awt.event.ActionEvent evt) {
         if (finalTotalPrice != 0 && !cnbox.getText().equals("")) {
             orderid = getUniqueId("Bill-");
 
@@ -397,7 +395,7 @@ public class mangeorder extends javax.swing.JFrame {
     SimpleDateFormat myFormat = new SimpleDateFormat("dd-MM-yyyy");
     Calendar cal = Calendar.getInstance();
 
-    Connection conn = dbconnect.connect();  // or your correct method
+    Connection conn = dbconnect.connect();
 
     PreparedStatement ps = conn.prepareStatement(
         "INSERT INTO orderdetail(orderid, customer_fk, orderdate, totalpaid) VALUES (?, ?, ?, ?)"
@@ -413,7 +411,7 @@ public class mangeorder extends javax.swing.JFrame {
 }  catch (Exception e) {
                 JOptionPane.showMessageDialog(null, e);
             }
-          // **************************************************
+         
           
              com.itextpdf.text.Document doc = new com.itextpdf.text.Document();
             try {
@@ -482,19 +480,18 @@ public class mangeorder extends javax.swing.JFrame {
         {
          JOptionPane.showMessageDialog(null, "please add some product to cart or select customer");
         }
-    }//GEN-LAST:event_saveActionPerformed
+    }
 
-    private void resetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetActionPerformed
-
+    private void resetActionPerformed(java.awt.event.ActionEvent evt) {
         setVisible(false);
         new mangeorder().setVisible(true);
-    }//GEN-LAST:event_resetActionPerformed
+    }
 
-    private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
+    private void closeActionPerformed(java.awt.event.ActionEvent evt) {
         setVisible(false);
-    }//GEN-LAST:event_closeActionPerformed
+    }
 
-    private void customerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customerMouseClicked
+    private void customerMouseClicked(java.awt.event.MouseEvent evt) {
         int index = customer.getSelectedRow();
         TableModel model = customer.getModel();
 
@@ -504,9 +501,9 @@ public class mangeorder extends javax.swing.JFrame {
         cnbox.setText(model.getValueAt(index, 1).toString());
         cmnbox.setText(model.getValueAt(index, 2).toString());
         ebox.setText(model.getValueAt(index, 3).toString());
-    }//GEN-LAST:event_customerMouseClicked
+    }
 
-    private void productMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productMouseClicked
+    private void productMouseClicked(java.awt.event.MouseEvent evt) {
         int index = product.getSelectedRow();
         TableModel model = product.getModel();
 
@@ -514,9 +511,9 @@ public class mangeorder extends javax.swing.JFrame {
         pnbox.setText(model.getValueAt(index, 1).toString());
         ppbox.setText(model.getValueAt(index, 2).toString());
         pdbox.setText(model.getValueAt(index, 4).toString());
-    }//GEN-LAST:event_productMouseClicked
+    }
 
-    private void cartMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cartMouseClicked
+    private void cartMouseClicked(java.awt.event.MouseEvent evt) {
         int index = cart.getSelectedRow();
         int a = JOptionPane.showConfirmDialog(null, "Do You wangt to remove this product ", "selected", JOptionPane.YES_NO_OPTION);
         if (a == 0) {
@@ -526,7 +523,7 @@ public class mangeorder extends javax.swing.JFrame {
             ((DefaultTableModel) cart.getModel()).removeRow(index);
 
         }
-    }//GEN-LAST:event_cartMouseClicked
+    }
 
     public static void main(String args[]) {
 
